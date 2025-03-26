@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #303030;
+        }
+
+        #navbar ul {
+            display: flex;
+            list-style: none;
+            margin: auto;
+        }
+
+        #navbar ul li {
+            margin-right: 20px;
+        }
+
+        #navbar div {
+            display: flex;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            color: #922323;
+        }
+
+        .page_content {
+            padding: 20px;
+            flex: 1;
+            margin: 0 10vw;
+            border-left: 1px solid #303030; 
+            border-right: 1px solid #303030;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #303030;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Blog --nombre Usuario--</h1>
+        </header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Publicaciones</a></li>
+            </ul>
+            <div>
+                <a href="#">Iniciar sesión</a>
+            </div>
+        </nav>
+        <section class="page_content">
+
+        </section>
+        <footer>
+            <p>Blog creado por --nombre Usuario--</p>
+        </footer>
+    </main>
+</body>
+
+</html>
