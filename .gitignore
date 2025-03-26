@@ -1,0 +1,65 @@
+# Archivos del sistema
+__pycache__/
+*.py[cod]
+*$PYTHON_EXTENSIONS
+
+# Entornos virtuales
+venv/
+env/
+*.venv
+*.env
+
+# Archivos de configuración y credenciales sensibles
+.env
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de migraciones compilados
+migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+
+# Archivos de caché y compilados
+staticfiles/
+media/
+*.swp
+*.swo
+
+# Archivos de Node.js (si usas npm o yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Configuración de IDEs y editores de código
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Archivos de Docker (si usas Docker en tu proyecto)
+docker-compose.override.yml
+.dockerignore
+
+# Archivos de compilación de MacOS y Linux
+.DS_Store
+*.so
+
+# Archivos de cobertura de pruebas
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Archivos de documentación generados
+docs/_build/
+
+# Archivos de compilación de frontend (si usas Webpack o similar)
+dist/
+build/
