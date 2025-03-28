@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'post/css/base.css' %}">
+    <!--Bloque para agregar contenido extra a la cabecera
+    cuando se herede este template base -->
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Blog --nombre Usuario--</h1>
+        </header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'categorias' %}">Categorías</a></li>
+                <li><a href="{% url 'publicaciones' %}">Publicaciones</a></li>
+            </ul>
+            <div>
+                <a href="#">Iniciar sesión</a>
+            </div>
+        </nav>
+        <section class="page_content">
+            <!--Bloque para agregar contenido a las páginas cuando se herede este template base -->
+            {% block content %}
+            {% endblock content%}
+        </section>
+        <footer>
+            <p>Blog creado por --nombre Usuario--</p>
+        </footer>
+    </main>
+
+    <!--Bloque para importar archivos js extra a el final del body
+    cuando se herede este template base -->
+    {% block extrajs %}
+    {% endblock extrajs%}
+</body>
+
+</html>
