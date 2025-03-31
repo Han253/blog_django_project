@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'post/css/base.css' %}">
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Blog --nombre Usuario--</h1>
+        </header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'categorias' %}">Categorías</a></li>
+                <li><a href="{% url 'publicaciones' %}">Publicaciones</a></li>
+            </ul>
+            <div>
+                <a href="#">Iniciar sesión</a>
+            </div>
+        </nav>
+        <section class="page_content">
+            {% block content %}
+            {% endblock content %}
+        </section>
+        <footer>
+            <p>Blog creado por --nombre Usuario--</p>
+        </footer>
+    </main>
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+</body>
+
+</html>
