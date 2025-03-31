@@ -15,6 +15,8 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 
 ### Clonar el repositorio
 
+Debes tener instalado git en tu equipo antes de ejecutar estos comandos.
+
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd <NOMBRE_DEL_PROYECTO>
