@@ -1,0 +1,18 @@
+{% extends 'post/base.html' %}
+{% load static %}
+
+{% block extra_head %} 
+<title>Borrar Publicación</title>
+<link rel="stylesheet" href="{% static 'post/css/borrar_publicacion.css' %}">
+{% endblock extra_head%}
+
+{% block content %}
+<h1>Eliminar Publicación</h1>
+<p>¿Estás seguro de que deseas eliminar la publicación "<strong>{{ post.title }}</strong>"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-eliminar">Eliminar</button>
+    <a href="{% url 'publicaciones' %}" class="btn-cancelar">Cancelar</a>
+</form>
+{% endblock content%}

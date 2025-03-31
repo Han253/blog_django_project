@@ -3,8 +3,31 @@
 
 {% block extra_head %}
 <title>Publicaciones</title>
+<link rel="stylesheet" href="{% static 'post/css/publicaciones.css' %}">
 {% endblock extra_head %}
 
 {% block content %}
-<h1>Publicaciones</h1>
+<h1>Listado de Publicaciones</h1>
+
+<div class="actions">
+    <a href="{% url 'nueva_publicacion' %}" class="btn-nuevo-post">Crear Nueva Publicación</a>
+</div>
+
+{% for post in posts %}
+    <div class="post-container">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <p class="post-meta">
+            Autor: {{ post.author.username }} | Fecha: {{ post.created_at|date:"d M Y H:i" }} | Categoría: {{ post.category.name|default:"Sin categoría" }}
+        </p>
+        <p class="post-content">
+            {{ post.content|truncatewords:50 }}
+        </p>
+        <div class="post-actions">
+            <a href="{% url 'editar_publicacion' post.id %}" class="btn-editar-post">Editar</a>
+            <a href="{% url 'eliminar_publicacion' post.id %}" class="btn-eliminar-post">Eliminar</a>
+        </div>
+    </div>
+{% empty %}
+    <p>No hay publicaciones disponibles.</p>
+{% endfor %}
 {% endblock content %}
