@@ -15,16 +15,38 @@
 <body>
     <main>
         <header>
-            <h1>Blog --nombre Usuario--</h1>
+            {% if user.is_authenticated %}
+            <h1>Blog {{ user.username }}</h1>
+            {% else %}
+            <h1>Blog Personal</h1>
+            {% endif %}
         </header>
         <nav id="navbar">
             <ul>
                 <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'categorias' %}">Categorías</a></li>
-                <li><a href="{% url 'publicaciones' %}">Publicaciones</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'categorias' %}">Categorías</a></li>
+                    <li><a href="{% url 'publicaciones' %}">Publicaciones</a></li>
+                {% endif %}
+
+                {% if user.is_staff or user.is_superuser %}
+                    <li><a href="{% url 'admin:index' %}">Administración</a></li>
+                {% endif %}
             </ul>
             <div>
-                <a href="#">Iniciar sesión</a>
+                {% if user.is_authenticated %}
+                    <p><a href="{% url 'perfil' %}">Perfil</a> | <a class="nav-link" href="#" 
+                        onClick="document.getElementById('logoutform').submit()">
+                        Salir
+                        </a>
+                        <form id="logoutform" method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    </p>
+                {% else %}
+                    <a href="{% url 'login' %}">Iniciar Sesión</a>
+                {% endif %}
             </div>
         </nav>
         <section class="page_content">
@@ -33,7 +55,7 @@
             {% endblock content%}
         </section>
         <footer>
-            <p>Blog creado por --nombre Usuario--</p>
+            <p>UIS Programación Web 2025-I</p>
         </footer>
     </main>
 

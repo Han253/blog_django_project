@@ -6,5 +6,11 @@
 {% endblock extra_head%}
 
 {% block content %}
-<h1>Perfil Usuario</h1>
+<div class="perfil-container">
+    <h2>Perfil de Usuario</h2>
+    <p>test</p>
+    <p><b>Nombre de usuario:</b> {{ usuario.username }}</p>
+    <p><strong>Nombre:</strong> {{ usuario.first_name }} {{ usuario.last_name }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+</div>
 {% endblock content%}

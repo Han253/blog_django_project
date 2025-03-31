@@ -40,3 +40,36 @@
 .btn-nuevo-post:hover {
     background-color: #005f73;
 }
+.post-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.btn-editar-post {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #f0ad4e;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.btn-editar-post:hover {
+    background-color: #d98b36;
+}
+
+.btn-eliminar-post {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #d9534f;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.btn-eliminar-post:hover {
+    background-color: #b52b27;
+}

@@ -1,0 +1,27 @@
+.btn-eliminar {
+    padding: 10px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-eliminar:hover {
+    background-color: #b52b27;
+}
+
+.btn-cancelar {
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+}

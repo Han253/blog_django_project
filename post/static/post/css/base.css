@@ -67,3 +67,12 @@ footer {
     background-color: #303030;
     color: #ffffff;
 }
+
+.perfil-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #303030;
+    border-radius: 5px;
+    background: #f9f9f9;
+}

@@ -22,6 +22,10 @@
         <p class="post-content">
             {{ post.content|truncatewords:50 }}
         </p>
+        <div class="post-actions">
+            <a href="{% url 'editar_publicacion' post.id %}" class="btn-editar-post">Editar</a>
+            <a href="{% url 'eliminar_publicacion' post.id %}" class="btn-eliminar-post">Eliminar</a>
+        </div>
     </div>
 {% empty %}
     <p>No hay publicaciones disponibles.</p>
