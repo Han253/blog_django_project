@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post,Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -16,4 +16,13 @@ class PostForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'id': 'content', 'rows': 5}),
             'category': forms.Select(attrs={'id': 'category'}),
             'published': forms.CheckboxInput(attrs={'id': 'published'}),
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Escribe un comentario...'})
         }

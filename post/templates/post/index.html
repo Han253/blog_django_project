@@ -3,8 +3,27 @@
 
 {% block extra_head %} 
 <title>Inicio</title>
+<link rel="stylesheet" href="{% static 'post/css/index.css' %}">
 {% endblock extra_head%}
 
 {% block content %}
-<h1> Menu Principal</h1>
+<h1>Últimas Publicaciones</h1>
+
+<div class="grid-publicaciones">
+    {% for post in publicaciones_recientes %}
+        <div class="tarjeta-publicacion">
+            <h2 class="post-title">
+                <a href="{% url 'detalle_publicacion' post.id %}">{{ post.title }}</a>
+            </h2>
+            <p class="post-meta">
+                Autor: {{ post.author.username }} | Fecha: {{ post.created_at|date:"d M Y H:i" }}
+            </p>
+            <p class="post-content">
+                {{ post.content|truncatewords:30 }}
+            </p>
+        </div>
+    {% empty %}
+        <p>No hay publicaciones recientes.</p>
+    {% endfor %}
+</div>
 {% endblock content%}

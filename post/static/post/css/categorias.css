@@ -1,0 +1,39 @@
+.lista-publicaciones {
+    margin-top: 20px;
+}
+
+.post-container {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #303030;
+    font-weight: bold;
+}
+
+.post-title a:hover {
+    color: #922323;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.post-content {
+    font-size: 1em;
+}
+
+form {
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 5px;
+    font-size: 1em;
+}

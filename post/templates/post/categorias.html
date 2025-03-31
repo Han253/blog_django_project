@@ -3,8 +3,43 @@
 
 {% block extra_head %} 
 <title>Categorias</title>
+<link rel="stylesheet" href="{% static 'post/css/categorias.css' %}">
 {% endblock extra_head%}
 
 {% block content %}
 <h1>Categorias</h1>
+
+<!-- Formulario de filtro -->
+<form method="GET" action="{% url 'categorias' %}">
+    <label for="categoria">Selecciona una categoría:</label>
+    <select name="categoria" id="categoria" onchange="this.form.submit()">
+        <option value="">Todas las categorías</option>
+        {% for cat in categorias %}
+            <option value="{{ cat.id }}" {% if cat.id|stringformat:"s" == categoria_seleccionada %}selected{% endif %}>
+                {{ cat.name }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+<!-- Lista de publicaciones filtradas -->
+{% if publicaciones %}
+    <div class="lista-publicaciones">
+        {% for post in publicaciones %}
+            <div class="post-container">
+                <h2 class="post-title">
+                    <a href="{% url 'detalle_publicacion' post.id %}">{{ post.title }}</a>
+                </h2>
+                <p class="post-meta">
+                    Autor: {{ post.author.username }} | Fecha: {{ post.created_at|date:"d M Y H:i" }} 
+                </p>
+                <p class="post-content">
+                    {{ post.content|truncatewords:50 }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No hay publicaciones en esta categoría.</p>
+{% endif %}
 {% endblock content%}

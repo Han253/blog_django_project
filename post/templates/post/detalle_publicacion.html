@@ -1,0 +1,56 @@
+{% extends "post/base.html" %}
+{% load static %}
+
+{% block extra_head %} 
+<title>Detalle Publicación</title>
+<link rel="stylesheet" href="{% static 'post/css/detalle_publicacion.css' %}">
+{% endblock extra_head%}
+
+{% block content %}
+<div class="detalle-publicacion">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-meta">
+        Autor: {{ post.author.username }} | Fecha: {{ post.created_at|date:"d M Y H:i" }} | Categoría: {{ post.category.name|default:"Sin categoría" }}
+    </p>
+    <div class="post-content">
+        {{ post.content }}
+    </div>
+    {% if user.is_authenticated %}
+        <div class="post-actions">
+            <a href="{% url 'publicaciones' %}" class="btn-volver">Volver a Publicaciones</a>
+            {% if user == post.author or user.is_superuser %}
+                <a href="{% url 'editar_publicacion' post.id %}" class="btn-editar">Editar</a>
+                <a href="{% url 'eliminar_publicacion' post.id %}" class="btn-eliminar">Eliminar</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="post-actions">
+            <a href="{% url 'index' %}" class="btn-volver">Volver al Inicio</a>
+        </div>
+    {% endif %}
+</div>
+
+
+<!-- Sección de Comentarios -->
+<div class="comentarios-section">
+    <h3>Comentarios</h3>
+    {% for comentario in comentarios %}
+        <div class="comentario">
+            <p><strong>{{ comentario.author.username }}</strong> - {{ comentario.created_at|date:"d M Y H:i" }}</p>
+            <p>{{ comentario.content }}</p>
+        </div>
+    {% empty %}
+        <p>No hay comentarios aún.</p>
+    {% endfor %}
+
+    <!-- Formulario para agregar comentario -->
+    {% if user.is_authenticated %}
+    <h4>Agregar un comentario</h4>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-comentar">Publicar Comentario</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

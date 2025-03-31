@@ -1,0 +1,62 @@
+.detalle-publicacion {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #303030;
+    background: #f9f9f9;
+}
+
+.post-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.post-content {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.post-actions {
+    margin-top: 20px;
+}
+
+.btn-volver, .btn-editar, .btn-eliminar {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-volver { background-color: #555; }
+.btn-editar { background-color: #008CBA; }
+.btn-eliminar { background-color: #f44336; }
+
+.comentarios-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.comentario {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.btn-comentar {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-comentar:hover {
+    background-color: #005f73;
+}

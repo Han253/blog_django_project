@@ -1,0 +1,39 @@
+.grid-publicaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta columnas dinámicamente */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-publicacion {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tarjeta-publicacion:hover {
+    transform: scale(1.03);
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #303030;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.post-title a:hover {
+    color: #922323;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.post-content {
+    font-size: 1em;
+}

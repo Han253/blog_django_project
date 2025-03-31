@@ -11,6 +11,16 @@
     margin-bottom: 5px;
 }
 
+.post-title-ref{
+    color: #2a5f98 !important;
+}
+
+.post-title-ref:hover{
+    color: #982a2a !important;
+}
+
+
+
 .post-meta {
     color: #666;
     font-size: 0.9em;
